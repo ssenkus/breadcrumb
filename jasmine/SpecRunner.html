@@ -1,54 +1,68 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-  "http://www.w3.org/TR/html4/loose.dtd">
+    "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<head>
-  <title>Jasmine Spec Runner</title>
+    <head>
+        <title>Jasmine Spec Runner</title>
 
-  <link rel="shortcut icon" type="image/png" href="lib/jasmine-1.3.0/jasmine_favicon.png">
-  <link rel="stylesheet" type="text/css" href="lib/jasmine-1.3.0/jasmine.css">
-  <script type="text/javascript" src="lib/jasmine-1.3.0/jasmine.js"></script>
-  <script type="text/javascript" src="lib/jasmine-1.3.0/jasmine-html.js"></script>
-  <script type="text/javascript" src="lib/jasmine-jquery/jasmine-jquery.js"></script>
-  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
-  <!-- include source files here... -->
-  <script type="text/javascript" src="src/jQueryCookiePlugin.js"></script>
-  <script type="text/javascript" src="src/Song.js"></script>
+        <link rel="shortcut icon" type="image/png" href="lib/jasmine-1.3.0/jasmine_favicon.png">
+        <link rel="stylesheet" type="text/css" href="lib/jasmine-1.3.0/jasmine.css">
+        <script type="text/javascript" src="lib/jasmine-1.3.0/jasmine.js"></script>
+        <script type="text/javascript" src="lib/jasmine-1.3.0/jasmine-html.js"></script>
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>        
+        
+        <script type="text/javascript" src="lib/jasmine-jquery/jasmine-jquery.js"></script>
 
-  <!-- include spec files here... -->
-  <script type="text/javascript" src="spec/jQueryCookiePluginSpec.js"></script>
-  <script type="text/javascript" src="spec/PlayerSpec.js"></script>
+        <!-- include source files here... -->
 
-  <script type="text/javascript">
-    (function() {
-      var jasmineEnv = jasmine.getEnv();
-      jasmineEnv.updateInterval = 1000;
 
-      var htmlReporter = new jasmine.HtmlReporter();
+        <script type="text/javascript" src="src/checkPage.js"></script>
+        <script type="text/javascript" src="src/deleteCookieVal.js"></script>
+        <script type="text/javascript" src="src/getBreadcrumbs.js"></script>
+        <script type="text/javascript" src="src/getCookieVal.js"></script>
+        <script type="text/javascript" src="src/jQueryCookiePlugin.js"></script>        
+        <script type="text/javascript" src="src/matchBreadcrumbs.js"></script>
+        <script type="text/javascript" src="src/setCookieVal.js"></script>         
 
-      jasmineEnv.addReporter(htmlReporter);
+        <!-- include spec files here... -->
+        <script type="text/javascript" src="spec/checkPageSpec.js"></script>
+        <script type="text/javascript" src="spec/deleteCookieValSpec.js"></script>
+        <script type="text/javascript" src="spec/getBreadcrumbsSpec.js"></script>
+        <script type="text/javascript" src="spec/getCookieValSpec.js"></script>
+        <script type="text/javascript" src="spec/jQueryCookiePluginSpec.js"></script>        
+        <script type="text/javascript" src="spec/matchBreadcrumbsSpec.js"></script>
+        <script type="text/javascript" src="spec/setCookieValSpec.js"></script>
 
-      jasmineEnv.specFilter = function(spec) {
-        return htmlReporter.specFilter(spec);
-      };
+        <script type="text/javascript">
+            (function() {
+                var jasmineEnv = jasmine.getEnv();
+                jasmineEnv.updateInterval = 1000;
 
-      var currentWindowOnload = window.onload;
+                var htmlReporter = new jasmine.HtmlReporter();
 
-      window.onload = function() {
-        if (currentWindowOnload) {
-          currentWindowOnload();
-        }
-        execJasmine();
-      };
+                jasmineEnv.addReporter(htmlReporter);
 
-      function execJasmine() {
-        jasmineEnv.execute();
-      }
+                jasmineEnv.specFilter = function(spec) {
+                    return htmlReporter.specFilter(spec);
+                };
 
-    })();
-  </script>
+                var currentWindowOnload = window.onload;
 
-</head>
+                window.onload = function() {
+                    if (currentWindowOnload) {
+                        currentWindowOnload();
+                    }
+                    execJasmine();
+                };
 
-<body>
-</body>
+                function execJasmine() {
+                    jasmineEnv.execute();
+                }
+
+            })();
+        </script>
+
+    </head>
+
+    <body>
+    </body>
 </html>
