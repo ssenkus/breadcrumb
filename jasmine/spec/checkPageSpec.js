@@ -12,16 +12,60 @@
  }
  return bcPresence;
  }*/
-
-describe("checkPage", function() {
-    it("should return true if the page contains the # element", function() {
-
+//#c4-breadcrumbs-id10T
+describe("Page Setups", function() {
+    it("container element is not on the home page", function() {
         // == SETUP == //
         jasmine.getFixtures().fixturesPath = 'fixtures';
         loadFixtures('home.html');
        
-        expect($('#home')).toHaveText('home page');
+        expect($('#c4-breadcrumbs-id10T')).not.toExist();
+    });
+    
+    it("container element is on the category page", function() {
+        // == SETUP == //
+        jasmine.getFixtures().fixturesPath = 'fixtures';
+        loadFixtures('baby-layette.html');
+       
+        expect($('#c4-breadcrumbs-id10T')).toExist();
+    });    
+    
+    it("container element is on the product page", function() {
+        // == SETUP == //
+        jasmine.getFixtures().fixturesPath = 'fixtures';
+        loadFixtures('simply-stunning.html');
+       
+        expect($('#c4-breadcrumbs-id10T')).toExist();
     });
 
-
 });
+
+
+describe("checkPage", function() {
+    
+    it("should return false on the product page", function() {
+        // == SETUP == //
+        jasmine.getFixtures().fixturesPath = 'fixtures';
+        loadFixtures('home.html');        
+
+        expect(checkPage()).toBe(false);
+    });     
+    
+    
+    it("should return true on the category page", function() {
+        // == SETUP == //
+        jasmine.getFixtures().fixturesPath = 'fixtures';
+        loadFixtures('baby-layette.html');        
+
+        expect(checkPage()).toBe(true);
+    });     
+    
+    it("should return true on the product page", function() {
+        // == SETUP == //
+        jasmine.getFixtures().fixturesPath = 'fixtures';
+        loadFixtures('simply-stunning.html');        
+
+        expect(checkPage()).toBe(true);
+    }); 
+});
+    

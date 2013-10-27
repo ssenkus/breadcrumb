@@ -10,9 +10,7 @@ describe("jqueryCookie", function() {
         var testObj = {
             "test": "testValue"
         };
-        
-        console.log($.cookie('bcCookie'));
-        
+                
         $.cookie('bcCookie', testObj);
         //expect($.cookie('bcCookie')).toEqual("{\"test\":\"testValue\"}");
         expect($.cookie('bcCookie')).toEqual(testObj);
@@ -30,12 +28,14 @@ describe("jqueryCookie", function() {
             "test": "testValue"
         };
         
-        console.log($.cookie('bcCookie'));
-        
+     
         $.cookie('bcCookie', testObj);
         expect($.cookie('bcCookie')).toEqual("{\"test\":\"testValue\"}");
         
     });    
+    
+    
+    
     
 });
 
