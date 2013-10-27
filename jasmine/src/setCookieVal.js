@@ -1,6 +1,5 @@
-/* 
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-
+function setCookieVal(value) {
+    console.log('before setting Cookie:', $.cookie('bcHistory'));
+    $.cookie('bcHistory', value);
+    console.log('after setting Cookie:', $.cookie('bcHistory'));
+}
